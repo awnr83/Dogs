@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/dogsFragment">
+
+    <fragment
+        android:id="@+id/dogsFragment"
+        android:name="com.example.dogs.dogsList.DogsFragment"
+        android:label="fragment_dogs"
+        tools:layout="@layout/fragment_dogs" >
+        <action
+            android:id="@+id/action_dogsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.dogs.dogDetail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_dogsFragment"
+            app:destination="@id/dogsFragment" />
+        <argument
+            android:name="urlString"
+            app:argType="string" />
+    </fragment>
+</navigation>
